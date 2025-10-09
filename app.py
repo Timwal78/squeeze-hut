@@ -302,14 +302,14 @@ def get_signals():
     return response
 
 # Start background scanner
-def start_scanner():
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(scan_markets, 'interval', minutes=2)
-    scheduler.start()
+scheduler = BackgroundScheduler()
+scheduler.add_job(scan_markets, 'interval', minutes=2, id='market_scan')
+scheduler.start()
 
 # Initial scan
-Thread(target=scan_markets, daemon=True).start()
-Thread(target=start_scanner, daemon=True).start()
+print("Starting initial scan...")
+scan_markets()
+print("Initial scan complete. Scheduler running every 2 minutes.")
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
