@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Configuration
-TICKERS = os.getenv('TICKERS', 'TSLA,AMD,GME,NVDA,IONQ').split(',')
+TICKERS = os.getenv('TICKERS', 'AMC,,GME,YOLO,YYAI').split(',')
 DISCORD_WEBHOOK = os.getenv('DISCORD_WEBHOOK', '')
 
 # Global state
