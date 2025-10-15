@@ -7,6 +7,6 @@ services:
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: TICKERS
-        value: TSLA,AMD,GME,NVDA,IONQ
+        value: JFBR,GLTO,SPRB,SPRB,XBIO,BQ,SBLX,SLRX,ADTX,ORIS
       - key: DISCORD_WEBHOOK
         value: YOUR_DISCORD_WEBHOOK_HERE
